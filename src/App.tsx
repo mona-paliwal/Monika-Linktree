@@ -1,4 +1,6 @@
 import monikapic from "./assets/monikabg.png";
+import Resume from "./assets/Monika-Paliwal-Resume.pdf";
+
 import {
   TbWorld,
   TbUser,
@@ -14,18 +16,9 @@ function App() {
     {
       icon: <TbWorld className="text-[35px]" />,
       text: "My Website",
-      url: "https://monika-link.vercel.app/",
+      url: "https://monika-linktree.vercel.app/",
     },
-    {
-      icon: <TbUser className="text-[35px]" />,
-      text: "My Résumé",
-      url: "https://monika-link.vercel.app/resume/",
-    },
-    {
-      icon: <TbUser className="text-[35px]" />,
-      text: "My Portfolio",
-      url: "https://monika-link.vercel.app/portfolio",
-    },
+   
     {
       icon: <TbBrandInstagram className="text-[35px]" />,
       text: "Instagram",
@@ -46,25 +39,40 @@ function App() {
       text: "Behance",
       url: "https://www.behance.net/monapaliwal",
     },
+     {
+      icon: <TbUser className="text-[35px]" />,
+      text: "My Résumé",
+      url: Resume,
+      download: true,
+    },
+    {
+      icon: <TbUser className="text-[35px]" />,
+      text: "My Portfolio",
+      url: "https://monika-linktree.vercel.app/",
+    },
   ];
 
   return (
     <div className="flex flex-col justify-center items-center mx-3 my-12 md:mx-12">
       
+      {/* Profile Image */}
       <img
         className="h-24 rounded-full"
         src={monikapic}
         alt="Monika Paliwal"
       />
 
+      {/* Name */}
       <p className="text-white my-3 text-lg font-bold">
         Monika Paliwal
       </p>
 
+      {/* Title */}
       <p className="text-white text-base text-center">
         Web Designer | UI/UX Designer
       </p>
 
+      {/* Links */}
       <div className="text-[#BDBDBD] flex flex-col gap-5 mt-7 md:w-[55%] w-full items-center justify-center">
 
         {links.map((item, index) => (
@@ -73,6 +81,7 @@ function App() {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
+            download={item.download ? true : undefined}
             className="w-full text-center bg-[#525151] hover:bg-[#444444] rounded-[30px] hover:scale-[102%] transition duration-300 cursor-pointer"
           >
             <div className="flex justify-between items-center ml-2 mr-4">
@@ -92,6 +101,7 @@ function App() {
 
       </div>
 
+      {/* Footer */}
       <p className="text-white mt-10 text-center">
         Made by Monika Paliwal
       </p>
